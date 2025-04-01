@@ -76,7 +76,7 @@ app.get('/test-db', (req, res) => {
 
 // Network diagnostic
 app.get('/network', (req, res) => {
-  const host = process.env.DB_HOST || 'dpg-cvlvohe3jp1c738rbo2g-a.oregon-postgres.render.com';
+  const host = process.env.DB_HOST || 'dpg-cvlvohe3jp1c738rbo2g-a';
   
   exec(`ping -c 3 ${host}`, (error, stdout, stderr) => {
     res.status(200).json({
