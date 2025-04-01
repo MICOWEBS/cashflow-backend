@@ -10,33 +10,27 @@ services:
       - key: PORT
         value: 3001
       - key: DB_HOST
-        fromDatabase:
-          name: cashflow-db
-          property: host
+        value: dpg-cvlvohe3jp1c738rbo2g-a.oregon-postgres.render.com
+      - key: DB_PORT
+        value: 5432
       - key: DB_USER
-        fromDatabase:
-          name: cashflow-db
-          property: user
+        value: cashflow_user
       - key: DB_PASSWORD
-        fromDatabase:
-          name: cashflow-db
-          property: password
+        sync: false
       - key: DB_NAME
-        fromDatabase:
-          name: cashflow-db
-          property: database
+        value: cashflow_56jv
       - key: JWT_SECRET
         sync: false
       - key: JWT_EXPIRES_IN
         value: 24h
       - key: FRONTEND_URL
-        sync: false
+        value: https://cashflowfinance.vercel.app
       - key: EMAIL_FROM
         sync: false
       - key: RESEND_API_KEY
         sync: false
     databases:
       - name: cashflow-db
-        databaseName: cashflow
+        databaseName: cashflow_56jv
         user: cashflow_user
         plan: free 
