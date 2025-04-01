@@ -15,13 +15,15 @@ export const setupRoutes = (app: Application): void => {
   // Create main router
   const router = express.Router();
 
-  // Apply rate limiting to all routes
-  router.use(authLimiter);
-
+  // Apply rate limiting to specific authentication routes, not all routes
   // Public routes (no authentication required)
+  router.use('/auth/login', authLimiter);
+  router.use('/auth/register', authLimiter);
+  router.use('/admin/login', authLimiter);
+  router.use('/admin/forgot-password', authLimiter);
+  
+  // Routes without rate limiting
   router.use('/auth', authRoutes);
-  router.use('/admin/login', adminRoutes);
-  router.use('/admin/forgot-password', adminRoutes);
   router.use('/admin/reset-password', adminRoutes);
   router.use('/admin/verify-email', adminRoutes);
 
