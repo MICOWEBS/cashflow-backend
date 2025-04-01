@@ -14,10 +14,10 @@ export default {
     database: process.env.DB_NAME || 'cashflow',
   },
   email: {
-    from: process.env.EMAIL_FROM || 'noreply@yourdomain.com',
+    from: process.env.EMAIL_FROM || 'Acme <onboarding@resend.dev>',
     provider: {
       resend: {
-        apiKey: process.env.RESEND_API_KEY
+        apiKey: process.env.RESEND_API_KEY || '',
       }
     }
   },
