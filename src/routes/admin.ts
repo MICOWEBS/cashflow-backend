@@ -5,7 +5,8 @@ import {
   resetPassword, 
   verifyEmail,
   getProfile,
-  updateProfile
+  updateProfile,
+  adminSignup
 } from '../controllers/adminController';
 import { adminAuth } from '../middlewares/adminAuth';
 import multer from 'multer';
@@ -15,6 +16,7 @@ const upload = multer({ dest: 'uploads/admin' });
 
 // Public routes (no authentication required)
 router.post('/login', adminLogin as RequestHandler);
+router.post('/signup', adminSignup as RequestHandler);
 router.post('/forgot-password', forgotPassword as RequestHandler);
 router.post('/reset-password', resetPassword as RequestHandler);
 router.get('/verify-email/:token', verifyEmail as RequestHandler);
