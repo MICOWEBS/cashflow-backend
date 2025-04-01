@@ -9,6 +9,8 @@ services:
         value: production
       - key: PORT
         value: 3001
+      - key: DATABASE_URL
+        value: postgres://cashflow_user:qpNW9j7p1Nof42zfEbzG2eM209swyt7d@dpg-cvlvohe3jp1c738rbo2g-a.oregon-postgres.render.com/cashflow_56jv
       - key: DB_HOST
         value: dpg-cvlvohe3jp1c738rbo2g-a.oregon-postgres.render.com
       - key: DB_PORT
