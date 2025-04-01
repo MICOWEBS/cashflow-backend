@@ -38,4 +38,5 @@ services:
     databases:
       - name: cashflow-db
         databaseName: cashflow
-        user: cashflow_user 
+        user: cashflow_user
+        plan: free 
